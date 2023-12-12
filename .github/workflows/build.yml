@@ -46,7 +46,7 @@ jobs:
                     "type": "section",
                     "text": {
                       "type": "mrkdwn",
-                      "text": "*Name* \nKenneth Phang                 *Matriculation* 123 \n*Email* \nbunnyppl@gmail.com               *Repository* <https://github.com/kenken64/go-web3> "
+                      "text": "*Name* \nKenneth Phang                 *Matriculation* 123 \n*Email* \nfred@email.com               *Repository* <http://wwww> "
                     }
                   },
                   {
@@ -55,7 +55,7 @@ jobs:
                     "fields": [
                       {
                         "type": "mrkdwn",
-                        "text": "*Deployment* \n<https://goweb3-production.up.railway.app/> \n<https://goweb3-production.up.railway.app/|Open application>"
+                        "text": "*Deployment* \n<https://link-url-here.org> \n<https://link-url-here.org|Open application>"
                       }
                     ]
                   }
