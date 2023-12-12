@@ -40,26 +40,11 @@ jobs:
         with:
           payload: |
               {
-                "text": "CI/CD Submission",
-                "blocks": [
-                  {
-                    "type": "section",
-                    "text": {
-                      "type": "mrkdwn",
-                      "text": "*Name* \nKenneth Phang                 *Matriculation* 123 \n*Email* \nfred@email.com               *Repository* <http://wwww> "
-                    }
-                  },
-                  {
-                    "type": "section",
-                    "block_id": "section789",
-                    "fields": [
-                      {
-                        "type": "mrkdwn",
-                        "text": "*Deployment* \n<https://link-url-here.org> \n<https://link-url-here.org|Open application>"
-                      }
-                    ]
-                  }
-                ]
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "New Paid Time Off request from <example.com|Fred Enriquez>\n\n<https://example.com|View request>"
+                }
               }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
