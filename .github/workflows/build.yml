@@ -28,3 +28,9 @@ jobs:
           tag: "latest"
           artifacts: "release.tar.gz,foo/*.txt" 
           bodyFile: "body.md"
+      - name: Install Railway CLI
+        run: npm i -g @railway/cli
+      - name: Deploy
+        run: RAILWAY_TOKEN=$RAILWAY_TOKEN railway up --service=goweb3
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  
