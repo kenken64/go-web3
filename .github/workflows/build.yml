@@ -40,11 +40,8 @@ jobs:
         with:
           payload: |
               {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "New Paid Time Off request from <example.com|Fred Enriquez>\n\n<https://example.com|View request>"
-                }
+                "key": "value",
+                "foo": "bar"
               }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
