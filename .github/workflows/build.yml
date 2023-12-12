@@ -34,3 +34,33 @@ jobs:
         run: railway up --service=goweb3
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      - name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+              {
+                "text": "CI/CD Submission",
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Name* \nKenneth Phang                 *Matriculation* 123 \n*Email* \nbunnyppl@gmail.com               *Repository* <https://github.com/kenken64/go-web3> "
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "block_id": "section789",
+                    "fields": [
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Deployment* \n<https://goweb3-production.up.railway.app/> \n<https://goweb3-production.up.railway.app/|Open application>"
+                      }
+                    ]
+                  }
+                ]
+              }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
