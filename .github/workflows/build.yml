@@ -40,8 +40,33 @@ jobs:
         with:
           payload: |
               {
-                "key": "value",
-                "foo": "bar"
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "New Paid Time Off request from <example.com|Fred Enriquez>\n\n<https://example.com|View request>"
+                }
+              }
+              {
+                "text": "CI/CD Submission",
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Name* \nKenneth Phang                 *Matriculation* 123 \n*Email* \nbunnyppl@gmail.com               *Repository* <https://github.com/kenken64/go-web3> "
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "block_id": "section789",
+                    "fields": [
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Deployment* \n<https://goweb3-production.up.railway.app/> \n<https://goweb3-production.up.railway.app/|Open application>"
+                      }
+                    ]
+                  }
+                ]
               }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
